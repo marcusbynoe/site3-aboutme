@@ -1,5 +1,11 @@
 # site3-aboutme
 
+## Pair Programming
+
+Navigator: Liam Grist
+
+Driver: Marcus Bynoe
+
 ## Synopsis
 
 This is a project website **about me**. I am the most interesting man in the world. 
