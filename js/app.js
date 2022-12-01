@@ -6,8 +6,9 @@ function whatUser() {
   
   alert("Welcome " + capName + "! Please try to guess the answers to the following questions with yes/no or y/n.");
   return document.write(capName);
-}
 
+}
+console.log(capName);
 let user = whatUser();
 
 let question1 = prompt("Can you guess? Do I have red hair?").toLowerCase();
@@ -61,27 +62,42 @@ let maxAttemts = 4;
 let score = 0;
 // console.log(typeof(myNum));
 
-while (attemptsNum < maxAttemts) {
-  let question6 = prompt("Ready? Guess how many years did I live in Hawaii?");
-  if (parseInt(question6) === myNum) {
-    alert("You are correct!");
-    score++;
-    console.log(typeof(myNum));
-    break;
+for (let index = 0; index < maxAttemts; index++) {
+  let question6 = +prompt("Ready? Guess how many years did I live in Hawaii?");
+  if (question6 > myNum) {
+    alert("Your answer is too high");
   } else if (question6 < myNum){
     alert("You answer is too low.");
-    attemptsNum ++;
-  } else if (question6 > myNum){
-    alert("Your answer is too high");
-    attemptsNum ++;
+  } else if (question6 === myNum) {
+    score++;
+    alert("You are correct!");
+  } break;
+
+  if (i === 3) {
+    alert(`Sorry, you are now out of attempts. You had ${maxAttempts}`)
   }
 }
+
+// while (attemptsNum < maxAttemts) {
+//   let question6 = prompt("Ready? Guess how many years did I live in Hawaii?");
+//   if (parseInt(question6) === myNum) {
+//     alert("You are correct!");
+//     score++;
+//     console.log(typeof(myNum));
+//     break;
+//   } else if (question6 < myNum){
+//     alert("You answer is too low.");
+//     attemptsNum ++;
+//   } else if (question6 > myNum){
+//     alert("Your answer is too high");
+//     attemptsNum ++;
+//   }
+// }
 
 
 let answerArray = ["house", "country", "funk", "hip hop", "soul", "electronic"];
 let maxTries = 6;
 
-for (let i = 0; i < maxTries; i++) {
 // declare userAnswer as input to a prompt
 // iterate over answer array
 // if userAnser is at an index in the answer array
@@ -91,15 +107,14 @@ for (let i = 0; i < maxTries; i++) {
 
 
 
-
+for (let i = 0; i < maxTries; i++) {
   let userAnswer = prompt("Name a genre of music do I listen to...");
   let answerBool = false;
   for (let j = 0; j < answerArray.length; j++) {
 
     if (userAnswer === answerArray[j]){
-      alert("Yes, I do listen to that type of music!")
-      score++;
       answerBool = true;
+      score++;
       break;
     } else {
       answerBool = false;
@@ -108,7 +123,8 @@ for (let i = 0; i < maxTries; i++) {
   }
   if (answerBool === false) {
     alert(`Keep trying ${capName}!`)
-  } else {
+  } else if (answerBool === true) {
     alert("Congrats!")
+    break;
   }
 }
