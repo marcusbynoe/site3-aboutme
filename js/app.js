@@ -54,3 +54,61 @@ if (question5 === "yes" || question5 === "y") {
   alert("OK, that is fine.")
   // console.log("OK, that is fine.")
 }
+
+let myNum = 9;
+let attemptsNum = 0;
+let maxAttemts = 4;
+let score = 0;
+// console.log(typeof(myNum));
+
+while (attemptsNum < maxAttemts) {
+  let question6 = prompt("Ready? Guess how many years did I live in Hawaii?");
+  if (parseInt(question6) === myNum) {
+    alert("You are correct!");
+    score++;
+    console.log(typeof(myNum));
+    break;
+  } else if (question6 < myNum){
+    alert("You answer is too low.");
+    attemptsNum ++;
+  } else if (question6 > myNum){
+    alert("Your answer is too high");
+    attemptsNum ++;
+  }
+}
+
+
+let answerArray = ["house", "country", "funk", "hip hop", "soul", "electronic"];
+let maxTries = 6;
+
+for (let i = 0; i < maxTries; i++) {
+// declare userAnswer as input to a prompt
+// iterate over answer array
+// if userAnser is at an index in the answer array
+// then the loop stops since it is true and increment the score and alert the user
+// if the userAnswer is at an index and is not equal to the string at index,
+// then prompt the user again
+
+
+
+
+  let userAnswer = prompt("Name a genre of music do I listen to...");
+  let answerBool = false;
+  for (let j = 0; j < answerArray.length; j++) {
+
+    if (userAnswer === answerArray[j]){
+      alert("Yes, I do listen to that type of music!")
+      score++;
+      answerBool = true;
+      break;
+    } else {
+      answerBool = false;
+      break;
+    }
+  }
+  if (answerBool === false) {
+    alert(`Keep trying ${capName}!`)
+  } else {
+    alert("Congrats!")
+  }
+}
